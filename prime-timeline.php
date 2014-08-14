@@ -48,7 +48,7 @@ class prime_timeline {
 		$this->i = 0;
 
 		require_once( dirname( __FILE__ ) . '/inc/ps_timeline_hook.php' );
-		$this->hook = new ps_timeline_hook( &$this );
+		$this->hook = new ps_timeline_hook( $this );
 
 		if ( ! defined( 'SAVEQUERIES' ) ) {
 			define ( 'SAVEQUERIES', true );
@@ -99,8 +99,7 @@ class prime_timeline {
 		add_action( 'shutdown',                  array( &$this, 'shutdown' ), 0 );
 
 		wp_enqueue_style(  'ps_timeline',	plugins_url( 'css/ps_timeline.css', __FILE__ ) , array(), $this->ver );
-		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'ps_timeline',	plugins_url( 'js/ps_timeline.js',   __FILE__ ) , array(), $this->ver, true );
+		wp_enqueue_script( 'ps_timeline',	plugins_url( 'js/ps_timeline.js',   __FILE__ ) , array('jquery'), $this->ver, true );
 
 		ob_start( array( &$this, 'output' ) );
 	}
@@ -183,6 +182,12 @@ class prime_timeline {
 									$func = $func[0] . '::' . $func[1];
 								}
 							}
+
+							// ex. $func is instance of Closure. PHP 5.3+
+							if( is_object($func) ){
+								$func = get_class($func);
+							}
+
 							if ( ! isset( $hooks[$tag][$file][$line]['callback'][$priority][$func] ) ) {
 								$hooks[$tag][$file][$line]['callback'][$priority][$func] = 1;
 							} else {

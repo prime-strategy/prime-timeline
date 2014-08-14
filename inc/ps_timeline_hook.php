@@ -10,7 +10,7 @@ public $hooks = array();
 public $st = array();
 public $c;
 
-	function __construct( $c ) {
+	function __construct( &$c ) {
 		$this->c = $c;
 	}
 
