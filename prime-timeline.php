@@ -1,15 +1,10 @@
 <?php
-/**
- * @package prime_timeline package
- * @version 1.0.3
- */
-
 /*
 Plugin Name: Prime Timeline
 Plugin URI: http://www.prime-strategy.co.jp/
 Description: This plugin analyze the execution status of WordPress for debugging, performance check, and study.
 Author: Kengyu Nakamura ( Prime Strategy Co.,Ltd. )
-Version: 1.0.3
+Version: 1.0.4
 Author URI: http://www.prime-strategy.co.jp/
 */
 
@@ -40,11 +35,11 @@ class prime_timeline {
 	public $starttime;
 	public $checkpoint;
 	public $content;
-	public $ver = '1.0.3';
+	public $ver;
 
 	function __construct() {
 		global $timestart;
-		if ( ( ! defined( 'WP_USE_THEMES' ) && ! defined( 'WP_ADMIN' ) ) || defined( 'DOING_AJAX' ) ) {
+		if ( ( ! defined( 'WP_USE_THEMES' ) && ! defined( 'WP_ADMIN' ) ) || defined( 'DOING_AJAX' ) || defined( 'DOING_CRON' ) ) {
 			return;
 		}
 		
@@ -52,16 +47,41 @@ class prime_timeline {
 		$this->exectime = 0;
 		$this->i = 0;
 
-		if ( ! defined( 'SAVEQUERIES' ) ) {
-			define ( 'SAVEQUERIES', true );
-		}
-
 		require_once( dirname( __FILE__ ) . '/inc/ps_timeline_hook.php' );
 		$this->hook = new ps_timeline_hook( &$this );
+
+		if ( ! defined( 'SAVEQUERIES' ) ) {
+			define ( 'SAVEQUERIES', true );
+		} else {
+			$this->check_autoload();
+		}
 
 		add_action( 'init',  array( &$this, 'init' ) );
 		add_action( 'all',   array( &$this, 'all' ) );
 		add_filter( 'query', array( &$this, 'query' ), 9998 );
+	}
+
+	function check_autoload() {
+		global $wpdb;
+
+		if ( ! isset( $wpdb->queries[0][0] ) ) { return; }
+
+		$this->included_files();
+		$id_after_autoload = false;		
+
+		foreach( $this->logs as $key => $val ) {
+			if ( basename( $val['val'] ) == 'class-wp-walker.php' ) {
+				$id_after_autoload = $key;
+				break;
+			}
+		}
+
+		if ( false == $id_after_autoload ) { return; }
+
+		$log = array( 'type' => 'sql', 'diff' => 0 );
+		$wpdb->queries[0][0] .= " -- $id_after_autoload";
+		array_splice( $this->logs, $id_after_autoload, 0, 0 );
+		$this->logs[$id_after_autoload] = $log;
 	}
 
 	function init() {
@@ -71,13 +91,16 @@ class prime_timeline {
 			return;
 		}
 
+		$header = get_file_data( __FILE__, array( 'ver' => 'Version' ) );
+		$this->ver = $header['ver'];
+
 		add_action( 'admin_bar_menu',            array( &$this, 'admin_bar_menu' ), 100 );
 		add_action( 'wp_after_admin_bar_render', array( &$this, 'panel_render' ) );
 		add_action( 'shutdown',                  array( &$this, 'shutdown' ), 0 );
 
-		wp_enqueue_style(  'ps_timeline',	plugins_url( 'css/ps_timeline.css' , __FILE__ ) , array(), $this->ver );
+		wp_enqueue_style(  'ps_timeline',	plugins_url( 'css/ps_timeline.css', __FILE__ ) , array(), $this->ver );
 		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'ps_timeline',	plugins_url( 'js/ps_timeline.js' ,   __FILE__ ) , array(), $this->ver, true );
+		wp_enqueue_script( 'ps_timeline',	plugins_url( 'js/ps_timeline.js',   __FILE__ ) , array(), $this->ver, true );
 
 		ob_start( array( &$this, 'output' ) );
 	}
