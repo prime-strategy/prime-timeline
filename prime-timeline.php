@@ -184,7 +184,7 @@ class prime_timeline {
 							}
 
 							// ex. $func is instance of Closure. PHP 5.3+
-							if( is_object( $func ) ){
+							if ( is_object( $func ) ){
 								$func = get_class( $func );
 							}
 
