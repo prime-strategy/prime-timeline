@@ -153,7 +153,6 @@ class prime_timeline {
 		} else {
 			$debug = debug_backtrace();
 		}
-
 		foreach ( $debug as $key => $val ) {
 			if ( in_array( $val['function'] , $hook_arr ) ) {
 				$file = str_replace( ABSPATH, '', $val['file'] );
@@ -199,7 +198,8 @@ class prime_timeline {
 						$hooks[$tag][$file][$line]['time'] = 0;
 					}
 					$this->hook->st[$this->i] = array( $tag, $file, $line, microtime( true ) );
-					add_action( $tag, array( &$this->hook, 'stop_' . $this->i ), 9999 );
+					add_action( $tag, array( &$this->hook, 'stop_' . $this->i ), 999999 );
+					
 				}
 				break;
 			} 
@@ -255,6 +255,7 @@ class prime_timeline {
 	}
 
 	function output( $out ) {
+		$out .= '<!--out-->';
 		if ( preg_match( '/__ps_footer__/', $out ) ) {
 			$out = preg_replace( '/__ps_footer__/', $this->content, $out );
 		} else {
