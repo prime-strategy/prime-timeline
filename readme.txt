@@ -19,6 +19,7 @@ Display all the hooks, all the queries, all the loaded files, and some informati
  * Yuya Tajima
  * Yachiyo Nishimaki
  * Hitoshi Omagari
+ * Yongjia Xie
  * Koichiro Nakadori
  * Yuta Sakamoto
  * Yoshihiro Oshima
