@@ -27,6 +27,7 @@ Display all the hooks, all the queries, all the loaded files, and some informati
  * Koichiro Nakadori
  * Yuta Sakamoto
  * Yoshihiro Oshima
+ * Nobuyuki Ito ( header image )
 
 == Installation ==
 
