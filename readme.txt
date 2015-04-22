@@ -1,5 +1,5 @@
 === Prime Timeline ===
-Contributors: primestrategy, Kengyu Nakamura, jim912, tajima_taso, Koichiro Nakadori
+Contributors: primestrategy, Kengyu Nakamura, jim912, tajima_taso, modshrink
 Tags: debug, tools, develop, study
 Requires at least: 3.3
 Tested up to: 4.1.1
