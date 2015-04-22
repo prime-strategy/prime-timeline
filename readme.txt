@@ -14,6 +14,10 @@ This plugin analyze the execution status of WordPress for debugging, performance
 
 Display all the hooks, all the queries, all the loaded files, and some information for the current request.
 
+= Related Links =
+ * [Japanese documentation](http://blog.prime-strategy.co.jp/2014/12/prime-timeline/)
+ * [Github](https://github.com/prime-strategy/prime-timeline)
+
 = Special Thanks =
  * Kengyu Nakamura
  * Yuya Tajima
