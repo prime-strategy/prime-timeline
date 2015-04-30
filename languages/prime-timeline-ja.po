@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: prime-timeline\n"
 "POT-Creation-Date: 2015-04-30 18:57+0900\n"
-"PO-Revision-Date: 2015-04-30 18:57+0900\n"
+"PO-Revision-Date: 2015-04-30 19:46+0900\n"
 "Last-Translator: \n"
 "Language-Team: Prime-strategy\n"
 "Language: japanese\n"
@@ -13,6 +13,14 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_;gettext;gettext_noop\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
+
+# Plugin Description
+msgid ""
+"This plugin analyze the execution status of WordPress for debugging, "
+"performance check, and study."
+msgstr ""
+"デバッグ、パフォーマンス確認、そして学習のためにWordPressの実行状態を解析する"
+"プラグインです。"
 
 #: ../tpl/ps_panel.php:5
 msgid "All Timeline"
