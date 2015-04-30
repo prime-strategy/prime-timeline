@@ -7,7 +7,7 @@ Author: Kengyu Nakamura ( Prime Strategy Co.,Ltd. )
 Version: 1.0.4
 Author URI: http://www.prime-strategy.co.jp/
 Text Domain: prime-timeline
-Domain Path: /languages/
+Domain Path: /languages
 */
 
 /*	Copyright 2014 Prime Strategy Co.,Ltd.
@@ -57,6 +57,8 @@ class prime_timeline {
 		} else {
 			$this->check_autoload();
 		}
+
+		load_plugin_textdomain( 'prime-timeline', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 
 		add_action( 'init',  array( &$this, 'init' ) );
 		add_action( 'all',   array( &$this, 'all' ) );
