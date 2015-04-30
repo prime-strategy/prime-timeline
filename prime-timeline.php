@@ -6,6 +6,8 @@ Description: This plugin analyze the execution status of WordPress for debugging
 Author: Kengyu Nakamura ( Prime Strategy Co.,Ltd. )
 Version: 1.0.4
 Author URI: http://www.prime-strategy.co.jp/
+Text Domain: prime-timeline
+Domain Path: /languages/
 */
 
 /*	Copyright 2014 Prime Strategy Co.,Ltd.
@@ -42,7 +44,7 @@ class prime_timeline {
 		if ( ( ! defined( 'WP_USE_THEMES' ) && ! defined( 'WP_ADMIN' ) ) || defined( 'DOING_AJAX' ) || defined( 'DOING_CRON' ) ) {
 			return;
 		}
-		
+
 		$this->starttime = $this->checkpoint = $timestart;
 		$this->exectime = 0;
 		$this->i = 0;
@@ -67,7 +69,7 @@ class prime_timeline {
 		if ( ! isset( $wpdb->queries[0][0] ) ) { return; }
 
 		$this->included_files();
-		$id_after_autoload = false;		
+		$id_after_autoload = false;
 
 		foreach( $this->logs as $key => $val ) {
 			if ( basename( $val['val'] ) == 'class-wp-walker.php' ) {
@@ -162,7 +164,7 @@ class prime_timeline {
 				if ( ! isset( $hooks[$tag][$file][$line] ) ) {
 					$hooks[$tag][$file][$line]['count'] = 1;
 					$this->included_files();
-					$this->logs[$this->i] = array( 
+					$this->logs[$this->i] = array(
 						'type' => 'hook',
 						'val' => array(	$tag, $file, $line, $function, $this->check_point( $start ) )
 					);
@@ -199,10 +201,10 @@ class prime_timeline {
 					}
 					$this->hook->st[$this->i] = array( $tag, $file, $line, microtime( true ) );
 					add_action( $tag, array( &$this->hook, 'stop_' . $this->i ), 999999 );
-					
+
 				}
 				break;
-			} 
+			}
 		}
 		$this->i++;
 		$diff = microtime( true ) - $start;
