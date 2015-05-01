@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: prime-timeline\n"
 "POT-Creation-Date: 2015-04-30 18:57+0900\n"
-"PO-Revision-Date: 2015-04-30 19:46+0900\n"
+"PO-Revision-Date: 2015-05-01 16:15+0900\n"
 "Last-Translator: \n"
 "Language-Team: Prime-strategy\n"
 "Language: japanese\n"
@@ -50,7 +50,7 @@ msgstr "通過した全てのフック"
 
 #: ../tpl/ps_panel.php:23
 msgid "Registerd Hooks"
-msgstr "コール登録済みフック"
+msgstr "コールバック登録済みフック"
 
 #: ../tpl/ps_panel.php:28
 msgid "Passed Hooks"
