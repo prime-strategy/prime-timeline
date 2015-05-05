@@ -1,0 +1,99 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: prime-timeline\n"
+"POT-Creation-Date: 2015-05-01 16:23+0900\n"
+"PO-Revision-Date: 2015-05-01 16:23+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+# Plugin Description
+msgid ""
+"This plugin analyze the execution status of WordPress for debugging, "
+"performance check, and study."
+msgstr ""
+
+#: ../tpl/ps_panel.php:5
+msgid "All Timeline"
+msgstr ""
+
+#: ../tpl/ps_panel.php:8
+msgid "Loaded Files"
+msgstr ""
+
+#: ../tpl/ps_panel.php:9 ../tpl/ps_panel.php:14 ../tpl/ps_panel.php:19
+#: ../tpl/ps_panel.php:24 ../tpl/ps_panel.php:29 ../tpl/ps_panel.php:34
+msgid "show"
+msgstr ""
+
+#: ../tpl/ps_panel.php:10 ../tpl/ps_panel.php:15 ../tpl/ps_panel.php:20
+#: ../tpl/ps_panel.php:25 ../tpl/ps_panel.php:30 ../tpl/ps_panel.php:35
+msgid "hide"
+msgstr ""
+
+#: ../tpl/ps_panel.php:13
+msgid "SQL Queries"
+msgstr ""
+
+#: ../tpl/ps_panel.php:18
+msgid "All Hooks"
+msgstr ""
+
+#: ../tpl/ps_panel.php:23
+msgid "Registerd Hooks"
+msgstr ""
+
+#: ../tpl/ps_panel.php:28
+msgid "Passed Hooks"
+msgstr ""
+
+#: ../tpl/ps_panel.php:33
+msgid "Slow Points"
+msgstr ""
+
+#: ../tpl/ps_table_header.php:1
+#, php-format
+msgid "Total execution time (%.2f msec)"
+msgstr ""
+
+#: ../tpl/ps_table_header.php:5
+msgid "No."
+msgstr ""
+
+#: ../tpl/ps_table_header.php:6
+msgid "Total"
+msgstr ""
+
+#: ../tpl/ps_table_header.php:7
+msgid "Type"
+msgstr ""
+
+#: ../tpl/ps_table_header.php:8
+msgid "File"
+msgstr ""
+
+#: ../tpl/ps_table_header.php:9
+msgid "Hook/SQL"
+msgstr ""
+
+#: ../tpl/ps_table_header.php:10
+msgid "Detail"
+msgstr ""
+
+#: ../tpl/ps_table_header.php:11
+msgid "Count"
+msgstr ""
+
+#: ../tpl/ps_table_header.php:12
+msgid "Diff"
+msgstr ""
+
+#: ../tpl/ps_table_header.php:13
+msgid "This"
+msgstr ""

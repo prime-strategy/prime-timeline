@@ -1,0 +1,102 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: prime-timeline\n"
+"POT-Creation-Date: 2015-04-30 18:57+0900\n"
+"PO-Revision-Date: 2015-05-01 16:15+0900\n"
+"Last-Translator: \n"
+"Language-Team: Prime-strategy\n"
+"Language: japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: __;_e;_;gettext;gettext_noop\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+# Plugin Description
+msgid ""
+"This plugin analyze the execution status of WordPress for debugging, "
+"performance check, and study."
+msgstr ""
+"デバッグ、パフォーマンス確認、そして学習のためにWordPressの実行状態を解析する"
+"プラグインです。"
+
+#: ../tpl/ps_panel.php:5
+msgid "All Timeline"
+msgstr "すべてのタイムライン"
+
+#: ../tpl/ps_panel.php:8
+msgid "Loaded Files"
+msgstr "読込済みファイル"
+
+#: ../tpl/ps_panel.php:9 ../tpl/ps_panel.php:14 ../tpl/ps_panel.php:19
+#: ../tpl/ps_panel.php:24 ../tpl/ps_panel.php:29 ../tpl/ps_panel.php:34
+msgid "show"
+msgstr "開く"
+
+#: ../tpl/ps_panel.php:10 ../tpl/ps_panel.php:15 ../tpl/ps_panel.php:20
+#: ../tpl/ps_panel.php:25 ../tpl/ps_panel.php:30 ../tpl/ps_panel.php:35
+msgid "hide"
+msgstr "隠す"
+
+#: ../tpl/ps_panel.php:13
+msgid "SQL Queries"
+msgstr "SQLクエリ"
+
+#: ../tpl/ps_panel.php:18
+msgid "All Hooks"
+msgstr "通過した全てのフック"
+
+#: ../tpl/ps_panel.php:23
+msgid "Registerd Hooks"
+msgstr "コールバック登録済みフック"
+
+#: ../tpl/ps_panel.php:28
+msgid "Passed Hooks"
+msgstr "コールバック未登録フック"
+
+#: ../tpl/ps_panel.php:33
+msgid "Slow Points"
+msgstr "ボトルネックポイント"
+
+#: ../tpl/ps_table_header.php:1
+#, php-format
+msgid "Total execution time (%.2f msec)"
+msgstr "実行時間合計 (%.2f msec)"
+
+#: ../tpl/ps_table_header.php:5
+msgid "No."
+msgstr "No."
+
+#: ../tpl/ps_table_header.php:6
+msgid "Total"
+msgstr "合計時間"
+
+#: ../tpl/ps_table_header.php:7
+msgid "Type"
+msgstr "項目タイプ"
+
+#: ../tpl/ps_table_header.php:8
+msgid "File"
+msgstr "ファイル"
+
+#: ../tpl/ps_table_header.php:9
+msgid "Hook/SQL"
+msgstr "フック名/SQLクエリ"
+
+#: ../tpl/ps_table_header.php:10
+msgid "Detail"
+msgstr "詳細"
+
+#: ../tpl/ps_table_header.php:11
+msgid "Count"
+msgstr "実行回数"
+
+#: ../tpl/ps_table_header.php:12
+msgid "Diff"
+msgstr "直前の処理からの経過時間"
+
+#: ../tpl/ps_table_header.php:13
+msgid "This"
+msgstr "この項目の合計時間"
