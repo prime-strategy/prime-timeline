@@ -4,7 +4,7 @@ Plugin Name: Prime Timeline
 Plugin URI: http://www.prime-strategy.co.jp/
 Description: This plugin analyze the execution status of WordPress for debugging, performance check, and study.
 Author: Kengyu Nakamura ( Prime Strategy Co.,Ltd. )
-Version: 1.0.4
+Version: 1.0.5
 Author URI: http://www.prime-strategy.co.jp/
 Text Domain: prime-timeline
 Domain Path: /languages
